@@ -2,12 +2,16 @@
 version: '3'
 services:
   accel-ppp:
-    image: lollylabs/sstp
+    image: nuclearcat/accel-ppp-sstp
     cap_add:
       - NET_ADMIN
       - NET_BROADCAST
       - NET_RAW
     network_mode: host
+    env:
+     HOSTNAME: bg.access.lolly.co
+     EMAI: support@lolly.co 
+     PRODUCTION: 1
     volumes:
       - ./conf/accel-ppp.conf:/etc/accel-ppp.conf
       - ./conf/chap-secrets.conf:/etc/accel-ppp/sstp/chap-secrets.conf
