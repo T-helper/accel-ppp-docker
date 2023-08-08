@@ -11,6 +11,7 @@ services:
     volumes:
       - ./conf/accel-ppp.conf:/etc/accel-ppp.conf
       - ./conf/chap-secrets.conf:/etc/accel-ppp/sstp/chap-secrets.conf
+      - ./letsencrypt/live/bg.access.lolly.co/:/etc/ssl/sstp/
 
   # letsencrypt-cloudflare:
   #   image: certbot/dns-cloudflare
