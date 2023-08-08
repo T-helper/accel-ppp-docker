@@ -2,11 +2,12 @@
 version: '3'
 services:
   accel-ppp:
-    image: ibhde/accel-ppp
+    image: lollylabs/sstp
     cap_add:
       - NET_ADMIN
       - NET_BROADCAST
       - NET_RAW
     network_mode: host
     volumes:
-      - /path/to/accel-ppp.conf:/etc/accel-ppp.conf
+      - ./conf/accel-ppp.conf:/etc/accel-ppp.conf
+      - ./conf/chap-secrets.conf:/etc/accel-ppp/sstp/chap-secrets.conf
